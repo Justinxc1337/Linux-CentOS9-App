@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.2em 0;
+}
+
+#headertemp {
+    color: red;
+}
+
+#headerlogo {
+    max-height: 35px;
+    max-width: 100px;
+    vertical-align: middle;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-color: white;
+    width: 20%;
+    height: 50vh;
+    margin: 0 auto;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px; /* Padding around the form */
+    border-radius: 10px; /* Rounded corners for the box */
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#loginForm label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    text-decoration: underline;
+    color: red;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#loginForm input {
+    margin-bottom: 20px; /* Space between input and button */
+}
+
+#loginForm button {
+    background-color: red; /* Cool red background */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding for a larger click area */
+    cursor: pointer; /* Cursor indicates clickable */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+#loginForm button:hover {
+    background-color: darkred; /* Darker red on hover for interaction feedback */
+}
+
+
+
+
+main {
+    flex: 1;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.2em 0;
+}
