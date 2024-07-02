@@ -8,14 +8,14 @@ function login(event) {
 function initializeList() {
     const noList = document.getElementById('no-list');
     const li = document.createElement('li');
-    li.textContent = 'brugernavn';
+    li.textContent = 'Nicolai';
     noList.appendChild(li);
 }
 
 function toggleAttendance() {
     const yesList = document.getElementById('yes-list');
     const noList = document.getElementById('no-list');
-    const username = 'brugernavn';
+    const username = 'Nicolai';
 
     if (noList.querySelector('li').textContent === username) {
         const yesItem = document.createElement('li');
