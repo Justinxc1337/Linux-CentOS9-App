@@ -1,30 +1,42 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mad Kalender</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Mad Kalender</h1>
+    <header>
+        <h1>Mad Kalender</h1>
+    </header>
 
-    <ul>
-        <li>
-            <p>Nicolai</p>
-            <button type="submit">Fravaelg</button>
-        </li>
-        <li>
-            <p>Shankar</p>
-            <button type="submit">Fravaelg</button>
-        </li>
-        <li>
-            <p>Justin</p>
-            <button type="submit">Fravaelg</button>
-        </li>
-        <li>
-            <p>Rasmus</p>
-            <button type="submit">Fravaelg</button>
-        </li>
-    </ul>
-    
+    <div class="login-container">
+        <form id="loginForm" onsubmit="login(event)">
+            <input type="text" id="username" value="brugernavn" readonly>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div id="calendar" class="hidden">
+        <h2>Vælg om du vil have mad i dag</h2>
+        <button onclick="toggleAttendance()">Ja</button>
+        <div class="box-container">
+            <div class="box" id="yes-box">
+                <h3>Ja</h3>
+                <ul id="yes-list"></ul>
+            </div>
+            <div class="box" id="no-box">
+                <h3>Nej</h3>
+                <ul id="no-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mad Kalender</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
