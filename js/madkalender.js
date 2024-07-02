@@ -1,26 +1,48 @@
-function login(event) {
+function addName(event) {
     event.preventDefault();
-    document.querySelector('.login-container').classList.add('hidden');
-    document.getElementById('calendar').classList.remove('hidden');
-    initializeList();
-}
+    const nameInput = document.getElementById('nameInput');
+    const name = nameInput.value.trim();
 
-function initializeList() {
-    const noList = document.getElementById('no-list');
-    const li = document.createElement('li');
-    li.textContent = 'Nicolai';
-    noList.appendChild(li);
-}
+    if (name) {
+        const newItem = document.createElement('div');
+        newItem.textContent = name;
+        newItem.classList.add('draggable');
+        newItem.setAttribute('draggable', 'true');
+        newItem.addEventListener('dragstart', dragStart);
 
-function toggleAttendance() {
-    const yesList = document.getElementById('yes-list');
-    const noList = document.getElementById('no-list');
-    const username = 'Nicolai';
+        const noBox = document.getElementById('no-box');
+        noBox.appendChild(newItem);
 
-    if (noList.querySelector('li').textContent === username) {
-        const yesItem = document.createElement('li');
-        yesItem.textContent = username;
-        yesList.appendChild(yesItem);
-        noList.innerHTML = '';
+        nameInput.value = '';
     }
 }
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function dragStart(event) {
+    event.dataTransfer.setData('text/plain', event.target.id);
+}
+
+function drop(event) {
+    event.preventDefault();
+    const data = event.dataTransfer.getData('text/plain');
+    const draggableElement = document.getElementById(data);
+    const dropzone = event.target.closest('.box');
+
+    if (dropzone && draggableElement) {
+        dropzone.appendChild(draggableElement);
+        event.dataTransfer.clearData();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    let idCounter = 1;
+    document.getElementById('nameForm').addEventListener('submit', () => {
+        const newItem = document.querySelector('.draggable:last-child');
+        if (newItem) {
+            newItem.id = 'item-' + idCounter++;
+        }
+    });
+});

@@ -9,15 +9,28 @@
 </head>
 <body>
     <header>
-        <header>
-            <h1 id="header">Mad <img src="images/logoresized.png" alt="logo" id="headerlogo"> <span id="headertemp">Kalender</span></h1>
-        </header>
+        <h1 id="header">Mad <img src="images/logoresized.png" alt="logo" id="headerlogo"> <span id="headertemp">Kalender</span></h1>
     </header>
 
     <main>
         <article>
-
             
+            <div class="calendar-container">
+                <form id="nameForm" onsubmit="addName(event)">
+                    <input type="text" id="nameInput" placeholder="Indtast navn" required>
+                    <button type="submit">Send</button>
+                </form>
+                <div class="box-container">
+                    <div class="box" id="yes-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <h3>Ja</h3>
+                    </div>
+                    <div class="box" id="no-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <h3>Nej</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Slet ikke tæt på en ægte version af mad kalender, kun start og test af mulige funktioner</p>
 
         </article>
     </main>

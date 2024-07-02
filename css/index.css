@@ -34,8 +34,8 @@ body {
     height: 50vh;
     margin: 0 auto;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    padding: 20px; /* Padding around the form */
-    border-radius: 10px; /* Rounded corners for the box */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 #loginForm {
@@ -54,22 +54,22 @@ body {
 }
 
 #loginForm input {
-    margin-bottom: 20px; /* Space between input and button */
+    margin-bottom: 20px;
 }
 
 #loginForm button {
-    background-color: red; /* Cool red background */
-    color: white; /* White text color */
-    border: none; /* Remove default border */
-    padding: 10px 20px; /* Padding for a larger click area */
-    cursor: pointer; /* Cursor indicates clickable */
-    border-radius: 5px; /* Rounded corners for a modern look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    transition: background-color 0.3s ease; /* Smooth color transition */
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
 }
 
 #loginForm button:hover {
-    background-color: darkred; /* Darker red on hover for interaction feedback */
+    background-color: darkred;
 }
 
 
