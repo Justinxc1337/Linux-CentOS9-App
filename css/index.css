@@ -1,27 +1,42 @@
-body {
-    font-family: Arial, sans-serif;
+html, body {
     margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
     padding: 0;
+}
+
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 #header {
-    background-color: #333;
+    background-color: #0F1828;
     color: white;
     text-align: center;
     padding: 0.2em 0;
+    margin: 0;
 }
 
 #headertemp {
-    color: red;
+    color: #B91915;
 }
 
 #headerlogo {
     max-height: 35px;
     max-width: 100px;
     vertical-align: middle;
+}
+
+#headerlink {
+    color: white;
+    text-decoration: none;
+}
+
+.templink {
+    color: #B91915;
+    font-size: 1.5em;
 }
 
 .login-container {
@@ -31,11 +46,12 @@ body {
     flex-grow: 1;
     background-color: white;
     width: 20%;
-    height: 50vh;
+    height:40vh;
     margin: 0 auto;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     padding: 20px;
     border-radius: 10px;
+    margin-top: 5%;
 }
 
 #loginForm {
@@ -47,10 +63,16 @@ body {
 #loginForm label {
     align-self: flex-start;
     margin-bottom: 5px;
-    text-decoration: underline;
-    color: red;
+    color: #B91915;
     font-weight: bold;
     font-size: 2em;
+}
+
+.picture {
+    width: 250px;
+    height: 100px;
+    margin-bottom: 20px;
+    margin-bottom: 100px;
 }
 
 #loginForm input {
@@ -58,7 +80,7 @@ body {
 }
 
 #loginForm button {
-    background-color: red;
+    background-color: #B91915;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -73,8 +95,6 @@ body {
 }
 
 
-
-
 main {
     flex: 1;
 }
@@ -82,7 +102,7 @@ main {
 footer {
     text-align: center;
     width: 100%;
-    background-color: #333;
+    background-color: #0F1828;
     color: white;
     text-align: center;
     padding: 0.2em 0;

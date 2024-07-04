@@ -1,0 +1,107 @@
+html, body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#header {
+    background-color: #0F1828;
+    color: white;
+    text-align: center;
+    padding: 0.2em 0;
+    margin: 0;
+}
+
+#headertemp {
+    color: #B91915;
+}
+
+#headerlogo {
+    max-height: 35px;
+    max-width: 100px;
+    vertical-align: middle;
+}
+
+#headerlink {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    gap: 1em;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.month {
+    grid-column: span 7;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.day-number {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.day.red {
+    background-color: red;
+    color: white;
+}
+
+.day.blue {
+    background-color: blue;
+    color: white;
+}
+
+.day.grey {
+    background-color: grey;
+    color: white;
+    cursor: not-allowed;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    background-color: #0F1828;
+    color: white;
+    padding: 0.2em 0;
+}

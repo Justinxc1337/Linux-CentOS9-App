@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mad Kalender</title>
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/index.js"></script>
+    <title></title>
+    <link rel="stylesheet" href="css/index.css?v=1.0">
+    <script src="js/index.js?v=1.0"></script>
 </head>
 <body>
     <header>
-        <h1 id="header">Mad <img src="images/logoresized.png" alt="logo" id="headerlogo"> <span id="headertemp">Kalender</span></h1>
+        <a href="index.html" id="headerlink"><h1 id="header">Mad <img src="images/logoresized.png" alt="logo" id="headerlogo"> <span id="headertemp">Kalender</span></h1></a>
     </header>
 
     <main>
         <article>
-        <a href="madkalender.html">TempLink til mad kalender</a>
+        <a href="madkalender.html" class="templink">TempLink til mad kalender</a> <br>
+        <a href="kalender.html" class="templink">TempLink til kalender</a>
+
 
 
             <section class="login-container">
                 <form id="loginForm" onsubmit="login(event)">
-                    <label for="mail">SeeSafe Mail</label>
+                    <img src="images/SeeSafe.png" alt="SeeSafe" class="picture">
+                    <label for="mail">Mail</label>
                     <input type="text" id="username" placeholder="Skriv din SeeSafe mail">
                     <button type="submit">Login</button>
                 </form>
@@ -27,7 +30,8 @@
 
         </article>
     </main>
-
+    
+    
 
     <footer>
         <p>&copy; 2024 Mad Kalender</p>
