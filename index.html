@@ -1,41 +1,37 @@
-<!DOCTYPE html>
-<html lang="da">
+﻿<html lang="dk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="css/index.css?v=1.0">
-    <script src="js/index.js?v=1.0"></script>
+    <title>Redirect</title>
 </head>
 <body>
-    <header>
-        <a href="index.html" id="headerlink"><h1 id="header">Mad <img src="images/logoresized.png" alt="logo" id="headerlogo"> <span id="headertemp">Kalender</span></h1></a>
-    </header>
-
     <main>
-        <article>
-        <a href="madkalender.html" class="templink">TempLink til mad kalender</a> <br>
-        <a href="kalender.html" class="templink">TempLink til kalender</a>
-
-
-
-            <section class="login-container">
-                <form id="loginForm" onsubmit="login(event)">
-                    <img src="images/SeeSafe.png" alt="SeeSafe" class="picture">
-                    <label for="mail">Mail</label>
-                    <input type="text" id="username" placeholder="Skriv din SeeSafe mail">
-                    <button type="submit">Login</button>
-                </form>
-            </section>
-
-        </article>
+        <a href="madkalendar/index.html"><img src="logo.png" alt="" id="link"></a>
     </main>
-    
-    
-
-    <footer>
-        <p>&copy; 2024 Mad Kalender</p>
-    </footer>
-
 </body>
 </html>
+
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+</style>
