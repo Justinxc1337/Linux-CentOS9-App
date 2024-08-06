@@ -1,0 +1,9 @@
+﻿Apache has permissions of all files in statustracker folder.
+Therefore all other users are unable to edit them.
+Apache needs permissions due to PHP being hosted through them.
+
+To Edit:
+sudo chown -R JXC:JXC /var/www/html/statustracker
+
+To Restore Access back to Apache:
+sudo chown -R apache:apache /var/www/html/statustracker
