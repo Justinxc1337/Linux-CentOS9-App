@@ -1,40 +1,22 @@
 const express = require('express');
-const { Client } = require('@microsoft/microsoft-graph-client');
-require('isomorphic-fetch');
-const getAccessToken = require('./auth');
+const { getLunchEvents } = require('./calendar');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = 3000;
 
-async function getClient() {
-    const accessToken = await getAccessToken();
-    const client = Client.init({
-        authProvider: (done) => {
-            done(null, accessToken);
-        }
-    });
-    return client;
-}
+// Serve static files from the "public" directory
+app.use(express.static('public'));
 
-app.get('/api/frokost-deltagelse', async (req, res) => {
+// API endpoint to get lunch attendance data
+app.get('/lunch-attendance', async (req, res) => {
     try {
-        const client = await getClient();
-        const events = await client.api('/me/calendar/events')
-            .filter("subject eq 'Frokost'")
-            .select('subject,start,attendees')
-            .get();
-
-        const lunchEvents = events.value.map(event => ({
-            dato: event.start.dateTime,
-            deltagere: event.attendees.filter(attendee => attendee.status.response === 'accepted').map(attendee => attendee.emailAddress.name)
-        }));
-
+        const lunchEvents = await getLunchEvents();
         res.json(lunchEvents);
     } catch (error) {
-        res.status(500).send({ error: error.message });
+        res.status(500).send(error.message);
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Serveren er på port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });

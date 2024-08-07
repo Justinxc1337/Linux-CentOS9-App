@@ -1,18 +1,20 @@
 const msal = require('@azure/msal-node');
+
 const config = {
     auth: {
-        clientId: 'YOUR_CLIENT_ID',
-        authority: 'https://login.microsoftonline.com/YOUR_TENANT_ID',
-        clientSecret: 'YOUR_CLIENT_SECRET'
+        clientId: '',
+        authority: 'https://login.microsoftonline.com/',
+        clientSecret: ''
     }
 };
+
 const cca = new msal.ConfidentialClientApplication(config);
 
-async function getAccessToken() {
-    const authResult = await cca.acquireTokenByClientCredential({
+async function getToken() {
+    const authResponse = await cca.acquireTokenByClientCredential({
         scopes: ["https://graph.microsoft.com/.default"]
     });
-    return authResult.accessToken;
+    return authResponse.accessToken;
 }
 
-module.exports = getAccessToken;
+module.exports = { getToken };
