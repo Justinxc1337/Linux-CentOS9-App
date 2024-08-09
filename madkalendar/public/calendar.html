@@ -1,0 +1,32 @@
+﻿<!-- public/calendar.html -->
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalender</title>
+    <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+    <h1>Kalender</h1>
+    <div>
+        <button id="prevMonth">Forrige måned</button>
+        <span id="monthYear"></span>
+        <button id="nextMonth">Næste måned</button>
+    </div>
+    <div id="calendar"></div>
+    <button id="makeAllGreen">Gør alle grønne</button>
+    <button id="makeAllRed">Gør alle røde</button>
+    <button id="confirmChanges">Bekræft ændringer</button>
+    <button id="logout">Log ud</button>
+    <script src="calendar.js?v=2"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userId = localStorage.getItem('userId');
+            if (!userId) {
+                window.location.href = 'login.html'; // Redirect to login if not authenticated
+            }
+        });
+    </script>
+</body>
+</html>
